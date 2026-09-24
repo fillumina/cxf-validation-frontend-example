@@ -56,6 +56,18 @@ cd ../cxf-validation-frontend && mvn -B install
 cd ../cxf-validation-frontend-example && mvn -B verify -Dcxf-validation-frontend.version=1.0.0-SNAPSHOT
 ```
 
+## What the test proves, and what it does not
+
+`TheFrontendRunsInTheBuildTest` reads the generated interface from the build itself. The
+`cxf-codegen-plugin` wrote it and the same build compiled it, so a frontend that writes something
+that does not compile fails before this test runs. What the test adds is that the interface is there
+and that `@Valid` is on the method and on its parameter, which is what this build asked the frontend
+for.
+
+It is the consumer path — the frontend reached through the codegen plugin of a real build — and not
+a replacement for the test suite of the project, which is where the behaviour of the frontend itself
+is pinned.
+
 This is a single project rather than a parent with one module per integration, which is the shape of
 the examples of the old line: that line had several plugins to exercise, this one has a single
 artifact.
