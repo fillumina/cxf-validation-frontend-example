@@ -71,3 +71,7 @@ is pinned.
 This is a single project rather than a parent with one module per integration, which is the shape of
 the examples of the old line: that line had several plugins to exercise, this one has a single
 artifact.
+
+The three plugins of this line together in one build, which is where the split is shown to do what
+the single plugin did, are in
+[`xjc-plugins-example`](https://github.com/fillumina/xjc-plugins-example).
