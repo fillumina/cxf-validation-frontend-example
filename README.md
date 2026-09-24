@@ -20,7 +20,7 @@ out of it.
             <extraargs>
               <extraarg>-frontend</extraarg>
               <extraarg>bean-validation</extraarg>
-              <extraarg>-xjc-XCxfValidationFrontendOptions:generateAnnotations=inOut</extraarg>
+              <extraarg>-xjc-XCxfValidationFrontendOptions:generateAnnotations=both</extraarg>
             </extraargs>
           </wsdlOption>
         </wsdlOptions>
